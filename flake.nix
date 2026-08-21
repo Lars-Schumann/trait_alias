@@ -1,5 +1,5 @@
 {
-  description = "rust dev shell for sure";
+  description = "rust dev shell for trait_alias";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -37,10 +37,9 @@
         };
 
         shellHook = ''
-          export PS1="\[\e[1;33m\][sure]\[\e[0m\] $PS1"
+          export PS1="\[\e[1;33m\][trait_alias]\[\e[0m\] $PS1"
 
           alias msrv="cargo msrv find --linear -- cargo test"
-          alias bench="cargo run --package sure_run_bench"
         '';
       };
     };
