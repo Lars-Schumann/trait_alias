@@ -1,9 +1,9 @@
 #[macro_export]
 macro_rules! trait_alias {
-    ($vis:vis trait $alias_name:ident = $($super_traits:tt)+) => {
+    ($vis:vis trait $alias_name:ident$(<$($generics:ident),*>)? = $($super_traits:tt)+) => {
 
-        $vis trait $alias_name: $($super_traits)+ {}
+        $vis trait $alias_name$(<$($generics),*>)?: $($super_traits)+ {}
 
-        impl<T: $($super_traits)+> $alias_name for T {}
+        impl<__ඞඞT: $($super_traits)+, $($($generics),*)?> $alias_name$(<$($generics),*>)? for __ඞඞT {}
     };
 }
